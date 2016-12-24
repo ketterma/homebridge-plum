@@ -1,6 +1,6 @@
 {
   "name": "homebridge-plum",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plum plugin for homebridge: https://github.com/nfarina/homebridge",
   "license": "MIT",
   "repository": {
