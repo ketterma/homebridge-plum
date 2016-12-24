@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "description": "Plum plugin for homebridge: https://github.com/nfarina/homebridge",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ketterma/homebridge-plum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ketterma/homebridge-plum/issues"
+  },
   "keywords": [
     "homebridge-plugin"
   ],
