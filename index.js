@@ -146,11 +146,6 @@ PlumPlatform.prototype.configureAccessory = function(accessory) {
     self.log.debug(`Configuring accessory ${accessory.displayName} ${lpid}...`);
     if (!lpid) { return; }
 
-    accessory.on('identify', function(paired, callback) {
-        self.log(accessory.displayName, "Identify!!!");
-        callback();
-    });
-
     var service = accessory.getService(Service.Lightbulb);
     if (!service) {
         service = accessory.addService(Service.Lightbulb, accessory.displayName);
@@ -246,6 +241,12 @@ PlumPlatform.prototype.postLightpad = function(accessory, path, body, callback) 
     var self = this;
 
     var address = self.lightpadAddresses[accessory.context.lpid];
+    
+    if (!address) {
+        callback();
+        return;
+    }
+
     var token = crypto.createHash('sha256')
                     .update(accessory.context.device.house['house_access_token'])
                     .digest('hex');
